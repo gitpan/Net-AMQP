@@ -1,0 +1,46 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 5928183443ad7d65922d501b58895792af7296c0 Build.PL
+SHA1 f235ba4160673bcb7c9d58c2f09dbc7fc0efadea LICENSE
+SHA1 db64d8c902afa958aabbc35df604a339d6b35d9d MANIFEST
+SHA1 c8032c1f96a9565e973639c59d719a4baf7ff8e1 META.yml
+SHA1 dc621186e0a9374d4aeddab4f1b7f83bbe07ffe5 Makefile.PL
+SHA1 27bdb5d2ef89b9cb5d47a3cadd9a0111ec8cb1fb README
+SHA1 95d9c105b160e2884132cb80ad0dbf080972a655 lib/Net/AMQP.pm
+SHA1 5f691e7b57abbc7df88a2148cefc2ece2d03de9c lib/Net/AMQP/Common.pm
+SHA1 c38fd2748aff9dbec69cab3859095b36a22bd348 lib/Net/AMQP/Frame.pm
+SHA1 934273b3587de7a78ef66a650dc69bbe14fe9389 lib/Net/AMQP/Frame/Body.pm
+SHA1 ef5b5624f855b1c4887121a6a030f45b15614958 lib/Net/AMQP/Frame/Header.pm
+SHA1 ea0ebb72cc2fc496b762cf6590ee99c3213547b9 lib/Net/AMQP/Frame/Heartbeat.pm
+SHA1 ca4dcd9612a9c13a25f6d251662cc2f2cb17671a lib/Net/AMQP/Frame/Method.pm
+SHA1 ba4f9a03ac233109db30f1afae554b67fe757274 lib/Net/AMQP/Frame/OOBBody.pm
+SHA1 3c5c8174ffcbf3b8eae93533d4a3329494769873 lib/Net/AMQP/Frame/OOBHeader.pm
+SHA1 3dc403e13fcb41d4f384a654f62f444ae3018c2e lib/Net/AMQP/Frame/OOBMethod.pm
+SHA1 5ca9da0ce3d80435a64c5ce3a8e66459c748d9bf lib/Net/AMQP/Frame/Trace.pm
+SHA1 f11383f4a025120ace1189cae983f8e46e7828a0 lib/Net/AMQP/Protocol.pm
+SHA1 8c120a20274d307ce59d108ad97f0fd532513c84 lib/Net/AMQP/Protocol/Base.pm
+SHA1 f0fd837e827f27378877bf4f3bed6d102a570593 spec/amqp0-8.xml
+SHA1 f407b08f944973ac7798073f57f74a48e5619c8a spec/amqp0-9.xml
+SHA1 f3df9bd9ce212f7c6d75f6e6c54791746d38eff6 t/01_basic.t
+SHA1 4ff50f6e238f84de931f97a111d6b0a4de8abf08 t/02_ruby_protocol_doc.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iEYEARECAAYFAkpePSgACgkQHHIpFH/pKkJL5gCfVBLybdPi2lGurj3VVtryip4S
+PPYAn38x/arPmzUTBgNRtH7hKO1spKUU
+=Mted
+-----END PGP SIGNATURE-----

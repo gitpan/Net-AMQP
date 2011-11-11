@@ -26,7 +26,7 @@ BEGIN {
 }
 __PACKAGE__->type_id(1);
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 =head1 OBJECT METHODS
 
@@ -62,6 +62,13 @@ sub register_method_class {
     }
 
     $registered->{$key} = $method_class;
+}
+
+sub registered_method_class {
+    my ($self_class, $class_id, $method_id) = @_;
+    my $key = join ':', $class_id, $method_id;
+    my $registered = $self_class->registered_method_classes;
+    return $registered->{$key};
 }
 
 sub parse_payload {

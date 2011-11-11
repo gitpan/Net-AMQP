@@ -26,18 +26,19 @@ BEGIN {
 use Net::AMQP::Frame::Method;
 use Net::AMQP::Frame::Header;
 use Net::AMQP::Frame::Body;
+use Net::AMQP::Frame::OOBMethod;
+use Net::AMQP::Frame::OOBHeader;
+use Net::AMQP::Frame::OOBBody;
+use Net::AMQP::Frame::Trace;
+use Net::AMQP::Frame::Heartbeat;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 =head1 CLASS METHODS
 
-=head2 new (...)
-
-=over 4
+=head2 new
 
 Takes an arbitrary list of key/value pairs and casts it into this class.  Nothing special here.
-
-=back
 
 =cut
 
@@ -46,13 +47,15 @@ sub new {
     return bless \%self, $class;
 }
 
-=head2 factory (...)
+=head2 factory
 
-=over 4
+  Net::AMQP::Frame->factory(
+    type_id => 1,
+    channel => 1,
+    payload => '',
+  );
 
-Pass in 'type_id', 'channel' and 'payload'.  Will attempt to identify a L<Net::AMQP::Frame> subclass for further parsing, and will croak on failure.  Returns a L<Net::AMQP::Frame> subclass object.
-
-=back
+Will attempt to identify a L<Net::AMQP::Frame> subclass for further parsing, and will croak on failure.  Returns a L<Net::AMQP::Frame> subclass object.
 
 =cut
 
@@ -88,8 +91,6 @@ sub factory {
 
 =head2 Field accessors
 
-=over 4
-
 Each subclass extends these accessors, but they share in common the following:
 
 =over 4
@@ -104,31 +105,17 @@ Each subclass extends these accessors, but they share in common the following:
 
 =back
 
-=back
-
 =head2 parse_payload
-
-=over 4
 
 Performs the parsing of the 'payload' binary data.
 
-=back
-
 =head2 to_raw_payload
-
-=over 4
 
 Returns the binary data the represents this frame's payload.
 
-=back
-
 =head2 to_raw_frame
 
-=over 4
-
 Returns a raw binary string representing this frame on the wire.
-
-=back
 
 =cut
 
@@ -147,11 +134,7 @@ sub to_raw_frame {
 
 =head2 type_string
 
-=over 4
-
 Returns a string that uniquely represents this frame type, such as 'Method Basic.Consume', 'Header Basic' or 'Body'
-
-=back
 
 =cut
 

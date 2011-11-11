@@ -36,7 +36,7 @@ Net::AMQP - Advanced Message Queue Protocol (de)serialization and representation
 
 =head1 DESCRIPTION
 
-This module implements the frame (de)serialization and representation of the Advanced Message Queue Protocol (http://www.amqp.org/).  It is to be used in conjunction with client or server software that does the actual TCP/IP communication.  While it's being written with AMQP version 0-8 in mind, as the spec is defined by an external xml file, support for 0-9, 0-9-1 and eventually 0-10 is hoped for.
+This module implements the frame (de)serialization and representation of the Advanced Message Queue Protocol (http://www.amqp.org/).  It is to be used in conjunction with client or server software that does the actual TCP/IP communication.
 
 =cut
 
@@ -46,17 +46,20 @@ use Net::AMQP::Protocol;
 use Net::AMQP::Frame;
 use Carp;
 
-our $VERSION = '0.01.1';
+our $VERSION = 0.02;
+
+use constant {
+    _HEADER_LEN => 7,  # 'CnN'
+    _FOOTER_LEN => 1,  # 'C'
+};
 
 =head1 CLASS METHODS
 
-=head2 parse_raw_frames ($string_ref)
+=head2 parse_raw_frames
 
-=over 4
+  Net::AMQP->parse_raw_frames(\$binary_payload)
 
 Given a scalar reference to a binary string, return a list of L<Net::AMQP::Frame> objects, consuming the data in the string.  Croaks on invalid input.
-
-=back
 
 =cut
 
@@ -64,16 +67,14 @@ sub parse_raw_frames {
     my ($class, $input_ref) = @_;
 
     my @frames;
-    while (length $$input_ref) {
-        my ($type_id, $channel, $size) = unpack 'CnN', substr $$input_ref, 0, 7, '';
-        if (! defined $size) {
-            croak "Frame payload size not found in input";
-        }
+    while (length($$input_ref) >= _HEADER_LEN + _FOOTER_LEN) {
+        my ($type_id, $channel, $size) = unpack 'CnN', $$input_ref;
+        last if length($$input_ref) < _HEADER_LEN + $size + _FOOTER_LEN;
+        substr $$input_ref, 0, _HEADER_LEN, '';
+
         my $payload = substr $$input_ref, 0, $size, '';
-        if (length $payload != $size) {
-            croak "Frame payload size $payload != header size $size";
-        }
-        my $frame_end_octet = unpack 'C', substr $$input_ref, 0, 1, '';
+
+        my $frame_end_octet = unpack 'C', substr $$input_ref, 0, _FOOTER_LEN, '';
         if ($frame_end_octet != 206) {
             croak "Invalid frame-end octet ($frame_end_octet)";
         }
@@ -90,6 +91,10 @@ sub parse_raw_frames {
 =head1 SEE ALSO
 
 L<POE::Component::Client::AMQP>
+
+=head1 TODO
+
+At the moment, only AMQP v0-8 is supported.  Support for v0-10 and later v1-0 is hoped for.
 
 =head1 COPYRIGHT
 

@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.63.
+signed via the Module::Signature module, version 0.68.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,39 +14,39 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 a3e053b08d94147192e46cee9d2a4b67f447501e Build.PL
-SHA1 1bb8f7d23002e20e02d1fb126da528a696b91c28 CHANGES
+SHA1 77a376d06a3808cb27fb9292c89a29d97a31d458 Build.PL
+SHA1 99f9e331eb409c7719b22d4a083277036fb6bf3b CHANGES
 SHA1 f235ba4160673bcb7c9d58c2f09dbc7fc0efadea LICENSE
 SHA1 a5c0ea27852a059a1147df29775516555bf838fa MANIFEST
-SHA1 c7dfc3faed4e9c56a9228122e7274f0e16691890 META.json
-SHA1 0835d9c8133db6f54bc7a22b7fee817dff362bfa META.yml
+SHA1 ad470ceb325f3e04418c0c34fb5d4e7b365fc0be META.json
+SHA1 851cb0c51788e4c4e03d8b8ee642a7db90c75781 META.yml
 SHA1 ec5cd3bdae87371d4c065bab1670bfd7cbdbb847 Makefile.PL
 SHA1 7edccf9a4297d6a47df18c24a6f928a3fdb344f5 README
-SHA1 64ca4718797ffc1da25a3d860d6759574d967ad7 lib/Net/AMQP.pm
-SHA1 4cbf4466e2c819b114a50937431d28c19902630e lib/Net/AMQP/Common.pm
-SHA1 debff4c511bbf0adb8657c299a8a4a76b562e378 lib/Net/AMQP/Frame.pm
-SHA1 19062d7a477dee695dc5ab7a4b4c6700232df925 lib/Net/AMQP/Frame/Body.pm
-SHA1 e3e4b7e483af2897a31551467343e6bafa75927b lib/Net/AMQP/Frame/Header.pm
-SHA1 0fb32060b8ebf34e570452aba07cbce3f5ff103c lib/Net/AMQP/Frame/Heartbeat.pm
-SHA1 13e43420f89dd4db3811dc11c6119736c015ddc2 lib/Net/AMQP/Frame/Method.pm
-SHA1 55fbed52e469c2c6f32da6be245c674a0748a261 lib/Net/AMQP/Frame/OOBBody.pm
-SHA1 b3bfc92b74164774fb253afab252687494d63d07 lib/Net/AMQP/Frame/OOBHeader.pm
-SHA1 1e931ddbf051a0efedcd18f318697af9b4b37cb5 lib/Net/AMQP/Frame/OOBMethod.pm
-SHA1 77d851479b80c150c3161021bc2f628f70a59aab lib/Net/AMQP/Frame/Trace.pm
-SHA1 c5c3514861a18d0c85c5821ffbd41c59abf6c748 lib/Net/AMQP/Protocol.pm
-SHA1 f0dc361af8be82a4b2ebc8ae08949fc271d13301 lib/Net/AMQP/Protocol/Base.pm
+SHA1 08eef8eb3f3cc7c90b1a95fb2ae4e2379d196c87 lib/Net/AMQP.pm
+SHA1 6c0337af6ae86b95badbf3a0623b426663682aea lib/Net/AMQP/Common.pm
+SHA1 06ab3b9e8a352e12e6f77bdbad4bdeefc5dd515e lib/Net/AMQP/Frame.pm
+SHA1 93e5c91aae0005b0a3cf8da2e61182b2d47709ff lib/Net/AMQP/Frame/Body.pm
+SHA1 aecfbfe9664d2989c912e852aec9d21742c93873 lib/Net/AMQP/Frame/Header.pm
+SHA1 478faa396f3d061802fd6b69c006d99b407d2244 lib/Net/AMQP/Frame/Heartbeat.pm
+SHA1 029e253c9741ada662d320ea154c1ba277c6874e lib/Net/AMQP/Frame/Method.pm
+SHA1 77916b0d5b757a0c71efebb483d6a809d37561d5 lib/Net/AMQP/Frame/OOBBody.pm
+SHA1 65a34a402951be632717591e475d8fa1b37c3eb6 lib/Net/AMQP/Frame/OOBHeader.pm
+SHA1 dcfc6964f6affb08be146d5c403c78708913e0aa lib/Net/AMQP/Frame/OOBMethod.pm
+SHA1 c48902dae9e90ee899a3a5ad890814759f2a2db6 lib/Net/AMQP/Frame/Trace.pm
+SHA1 260eae34e56b49f1d599e7b28aa96b3efbe238de lib/Net/AMQP/Protocol.pm
+SHA1 bebd2a733f9a52003fbbde9a0515561bcdde458b lib/Net/AMQP/Protocol/Base.pm
 SHA1 03a5199d1b5ed8c4719a6fe588c8d569e931266d lib/Net/AMQP/Protocol/v0_8.pm
 SHA1 f8cf98e5268cadfe2902e08ff611af105329a366 spec/amqp0-10.xml
 SHA1 f0fd837e827f27378877bf4f3bed6d102a570593 spec/amqp0-8.xml
-SHA1 f407b08f944973ac7798073f57f74a48e5619c8a spec/amqp0-9.xml
+SHA1 da0783da52d53bad07297f188c9f44d8c9d0d7b9 spec/amqp0-9.xml
 SHA1 41f533523fddfeb2f411976f434a22a6684147b0 spec/qpid.amqp0-8.xml
 SHA1 f3df9bd9ce212f7c6d75f6e6c54791746d38eff6 t/01_basic.t
 SHA1 2e149f080c803a026ed0d65602bdb3ee598bacd4 t/02_ruby_protocol_doc.t
 SHA1 82c840548999c5e1d2c41d3b7a538ba9d863f986 t/04_autodocs.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.10 (GNU/Linux)
+Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAk69MRAACgkQHHIpFH/pKkKwkwCfVo0CI3uLStO9G7NcRy8RlU5V
-jVIAnijKY9bv4q9LeCoF0TEcVOXtmIUr
-=NM4+
+iEYEARECAAYFAk+DER8ACgkQHHIpFH/pKkLO/gCfaSl0eAgdrOIlxyHTeBHQ9j61
+81MAnRroHOo+ctZsfIl/CMdhAgvSxD+/
+=4KZ6
 -----END PGP SIGNATURE-----

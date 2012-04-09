@@ -12,7 +12,7 @@ See L<Net::AMQP::Protocol/load_xml_spec> for how subclasses to this class are au
 
 use strict;
 use warnings;
-use base qw(Class::Data::Inheritable Class::Accessor);
+use base qw(Class::Data::Inheritable Class::Accessor::Fast);
 
 BEGIN {
     __PACKAGE__->mk_classdata($_) foreach qw(
@@ -24,7 +24,7 @@ BEGIN {
     );
 }
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 =head1 CLASS METHODS
 
